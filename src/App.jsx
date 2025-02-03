@@ -32,10 +32,10 @@ export const App = () => {
   }
 
   if (reversed) {
-    visibleGoods = visibleGoods.toReversed();
+    visibleGoods = visibleGoods.reverse();
   }
 
-  if (sortField === 'reset') {
+  const reset = () => {
     setSortField('');
     setReversed(false);
   }
@@ -83,7 +83,7 @@ export const App = () => {
               'is-danger': sortField === 'reset',
               'is-light': sortField !== 'reset',
             })}
-            onClick={() => setSortField('reset')}
+            onClick={() => reset()}
           >
             Reset
           </button>
